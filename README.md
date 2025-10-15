@@ -52,7 +52,7 @@ business_id (FK to User), image_filename, status (Enum: AVAILABLE, CLAIMED).
 The core dependencies are locked to specific versions to ensure environment reproducibility across development and deployment containers:
 
 * horizontal scaling (web service):
-- Load Balancing : By configuring the docker-compose.yml to run multiple identical web services (e.g., replicas: 3), we simulate a production environment where a load balancer distributes traffic across these instances. This is Horizontal Scalings handling increased load by adding more machines (containers),. not by making one machine more powerful. This ensures the service can handle numerous simultaneous users browsing and logging in during peak hours.
+-  Load Balancing : By configuring the docker-compose.yml to run multiple identical web services (e.g., replicas: 3), we simulate a production environment where a load balancer distributes traffic across these instances. This is Horizontal Scalings handling increased load by adding more machines (containers),. not by making one machine more powerful. This ensures the service can handle numerous simultaneous users browsing and logging in during peak hours.
 
 *data integrity and high availability (PostgreSQL)
 The persistence layer (PostgreSQL) is the most critical component. While docker-compose only deploys a single instance for simplicity, the design conceptually supports advanced fault tolerance.
